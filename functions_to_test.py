@@ -1,34 +1,72 @@
 # Placeholder functions for Python basics, to be implemented later
 
 def add_numbers(a, b):
-    pass
+    result = a + b
+    return result
 
 def find_maximum(a, b, c):
-    pass
+    return max(a, b, c)
 
 def is_palindrome(string):
-    pass
+    if string == string[::-1]:
+        return True
+    else:
+        return False
+    
 
 def count_word_occurrences(text, word):
     pass
 
+
 def read_file_lines(filepath):
-    pass
+    with open(filepath, 'r') as file:
+        lines = file.readlines()
+    return lines
 
 def factorial(n):
-    pass
+    if n <= 0:
+        raise ValueError("Factorial is not defined for negative numbers.")
+        return ""
+    if n == str(n):
+        raise TypeError("Input must be an integer.")
+    else:
+        return n * factorial(n - 1)
 
 def is_prime(n):
-    pass
+    if n < 0:
+        raise ValueError("Prime is not defined for negative numbers.")
+    if n == str(n):
+        raise TypeError("Input must be an integer.")
+    if n <= 1:
+        return False
+    for i in range(2, int(n**0.5) + 1):
+        if n % i == 0:
+            return False
+    return True
 
 def sort_numbers(numbers):
-    pass
+    for i in numbers:
+        if i == str(i):
+            raise TypeError("Input must be an integer.")
+    if numbers == []:
+        return []
+    else:
+        return sorted(numbers)
 
 def factorial(n):
-    pass
+    if n < 0:
+        raise ValueError("Factorial is not defined for negative numbers.")
+    if n == str(n):
+        raise TypeError("Input must be an integer.")
+    if n == 0:
+        return 1
+    else:
+        return n * factorial(n - 1)
 
 def fibonacci(n):
-    pass
+    if n <= 1:
+        return n
+    return fibonacci(n - 1) + fibonacci(n - 2)
 
 def tower_of_hanoi(n, source, auxiliary, target):
     
@@ -52,8 +90,11 @@ def tower_of_hanoi(n, source, auxiliary, target):
 
 class Person:
     def __init__(self, name, age):
-        pass
+        self.name = name
+        self.age = age
 
+        if Person.name == int(Person.name) or Person.age == str(Person.age):
+            raise TypeError("Name must be  a string and age must be an integer.")
 
 if __name__ == "__main__":
     # Placeholder functions for Python basics, to be implemented later
